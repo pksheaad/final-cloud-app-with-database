@@ -64,7 +64,7 @@
             -->
 
             <!-- <HINT> If user is authenticated, show course exam with a list of question -->
-
+              
             <!-- <HINT> Each example will have many questions -->
 
             <!-- <HINT> Each question will have many choices -->
@@ -76,7 +76,12 @@
             -->
 
             <!-- A choice submission form example
-            <form id="questionform" action="point to a submit view" method="post">
+> -->
+
+            <!--Check here to see more details Bootstrap checkbox
+             https://www.w3schools.com/bootstrap4/bootstrap_forms_inputs.asp-->
+			        {% if user.is_authenticated %}
+			             <form id="questionform" action="point to a submit view" method="post">
                         ... for each question in the course ...
                         <div class="card mt-1">
                             <div class="card-header"><h5>{{ question.question_text}}</h5></div>
@@ -93,10 +98,10 @@
                             </div>
                         </div>
                     <input class="btn btn-success btn-block" type="submit" value="Submit">
-            </form> -->
+            </form>
+			{% endif %}
+			     </div>
 
-            <!--Check here to see more details Bootstrap checkbox
-             https://www.w3schools.com/bootstrap4/bootstrap_forms_inputs.asp-->
     </div>
 </body>
 </html>
